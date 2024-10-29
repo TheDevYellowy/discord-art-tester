@@ -16,9 +16,12 @@ client.on("messageCreate", (message) => {
         "api_secret": process.env.api_secret
       }
     }).then(({ data }) => {
-      if(data.type.ai_generated > 0.6) message.delete();
+      if(data.type.ai_generated > 0.6) {
+        console.log(`Art sent by ${message.author.displayName} is AI`);
+        message.delete()
+      } else console.log(`Art sent by ${message.author.displayName} is not AI`);
     });
   }
 });
 
-client.login(process.env.discord_token)
+client.login(process.env.discord_token);
