@@ -24,4 +24,6 @@ client.on("messageCreate", (message) => {
   }
 });
 
+client.once("ready", () => { console.log(`${client.user.displayName} is online`) });
+
 client.login(process.env.discord_token);
