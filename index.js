@@ -7,7 +7,7 @@ const axios = require("axios");
 require("dotenv").config();
 
 client.on("messageCreate", (message) => {
-  if (message.member.permissions.has("ManageMessages")) return;
+  // if (message.member.permissions.has("ManageMessages")) return;
   if (message.attachments.size < 1) return;
   for (let i = 0; i < message.attachments.size; i++) {
     const url = message.attachments.at(i).url;
